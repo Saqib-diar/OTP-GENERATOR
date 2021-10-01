@@ -1,0 +1,23 @@
+<%- include('includes/start.ejs') %>    
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+     <%- include('includes/nav.ejs') %>
+
+    <main>
+        <div style="text-align: center;">
+        <form action="/" method="POST">
+            <div >
+                <label for="title">Enter your number</label>
+                <input type="number" name="title" id="title">
+                
+            <button class="btn" type="submit">Submit</button>
+        </div>
+        </form>
+    
+    </div>
+    </main>
+
+
+<%- include('includes/end.ejs') %>
