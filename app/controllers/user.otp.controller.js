@@ -1,15 +1,9 @@
 const db = require("../models");
-//import user and otp model
-
 const User = db.users;
 const Otp = db.otp;
-
 const bcrypt = require('bcrypt')
 const _ = require('lodash')
 const otpGenerator = require('otp-generator')
-
-//two function one for getting phoneNumber and sending otp
-//another for verifyng otp
 
 module.exports.generateOtp = async (req, res)=> {
     // console.log(req.body)
@@ -48,7 +42,6 @@ module.exports.generateOtp = async (req, res)=> {
 
 }
 
-//otp verification or expiration
 module.exports.verifyOtp = async (req, res)=> {
     // const prodId = req.params.user_id;
     // console.log(prodId);
@@ -59,7 +52,7 @@ module.exports.verifyOtp = async (req, res)=> {
         phoneNumber   
     } })
     //if database havent any otp
-    // console.log(otpHolder);
+    
     if(otpHolder.length === 0) {
     return res.status(400).send("Your used in expired otp");
 }
